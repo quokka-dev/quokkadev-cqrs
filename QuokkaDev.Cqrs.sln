@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{83A81F67-4053-416B-B387-284A0F1409D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuokkaDev.Cqrs", "src\QuokkaDev.Cqrs\QuokkaDev.Cqrs.csproj", "{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C39A1DE2-3AA8-4A0B-BE9F-3BF057ADF039}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuokkaDev.Cqrs.Tests", "test\QuokkaDev.Cqrs.Tests\QuokkaDev.Cqrs.Tests.csproj", "{5FD89742-3B12-4441-AAA6-6BC05B3CDC50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA45E1B9-779C-4F0B-AB2B-120DD77F1A52}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuokkaDev.Cqrs.Abstractions", "src\QuokkaDev.Cqrs.Abstractions\QuokkaDev.Cqrs.Abstractions.csproj", "{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD89742-3B12-4441-AAA6-6BC05B3CDC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD89742-3B12-4441-AAA6-6BC05B3CDC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD89742-3B12-4441-AAA6-6BC05B3CDC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD89742-3B12-4441-AAA6-6BC05B3CDC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E58181E-AF4C-4BC5-9B5B-10C1E9ECE32F} = {83A81F67-4053-416B-B387-284A0F1409D8}
+		{5FD89742-3B12-4441-AAA6-6BC05B3CDC50} = {C39A1DE2-3AA8-4A0B-BE9F-3BF057ADF039}
+		{7E9AFC77-74B1-42C4-B7CD-2D90E6E6A978} = {83A81F67-4053-416B-B387-284A0F1409D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E1FB425-90F7-4B90-85F3-56B34ED438BD}
+	EndGlobalSection
+EndGlobal
