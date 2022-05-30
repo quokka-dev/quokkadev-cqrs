@@ -4,17 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>Fabio Cometti</Authors>
-    <Company>QuokkaDev S.r.l.</Company>
+    <Company>QuokkaDev</Company>
     <Description>A package containing abstractions for implementing CQRS pattern in .NET projects</Description>
     <Copyright>Copyright © 2022</Copyright>
-    <PackageProjectUrl>https://github.com/QuokkaDevit/QuokkaDev-cqrs-abstractions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/quokka-dev/quokkadev-cqrs</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/QuokkaDevit/QuokkaDev-cqrs-abstractions</RepositoryUrl>
+    <RepositoryUrl>https://github.com/quokka-dev/quokkadev-cqrs</RepositoryUrl>
     <PackageTags>library;c#;CQRS;</PackageTags>
-	<Version>1.0.2</Version>
+	<Version></Version>
   </PropertyGroup>
 
   <ItemGroup>
