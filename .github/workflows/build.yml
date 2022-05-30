@@ -73,13 +73,13 @@ jobs:
         run: dotnet pack src/QuokkaDev.Cqrs/QuokkaDev.Cqrs.csproj -c Release /p:Version=${{ steps.calculate_version.outputs.version }}     
       
       - name: Publish to GitHub package QuokkaDev.Cqrs 
-        run: dotnet nuget push src/QuokkaDev.Cqrs/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} 
+        run: dotnet nuget push src/QuokkaDev.Cqrs/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
 
       - name: Pack QuokkaDev.Cqrs.Abstractions
         run: dotnet pack src/QuokkaDev.Cqrs.Abstractions/QuokkaDev.Cqrs.Abstractions.csproj -c Release /p:Version=${{ steps.calculate_version.outputs.version }}    
       
       - name: Publish to GitHub package QuokkaDev.Cqrs.Abstractions 
-        run: dotnet nuget push src/QuokkaDev.Cqrs.Abstractions/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }}
+        run: dotnet nuget push src/QuokkaDev.Cqrs.Abstractions/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
 
       - name: Tag version v${{ steps.calculate_version.outputs.version }}
         uses: rickstaa/action-create-tag@v1
