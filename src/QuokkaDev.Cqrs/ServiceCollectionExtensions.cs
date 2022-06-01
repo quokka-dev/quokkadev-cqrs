@@ -1,6 +1,6 @@
-﻿using QuokkaDev.Cqrs.Abstractions;
+﻿using Microsoft.Extensions.DependencyInjection;
+using QuokkaDev.Cqrs.Abstractions;
 using QuokkaDev.Cqrs.Implementations;
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace QuokkaDev.Cqrs

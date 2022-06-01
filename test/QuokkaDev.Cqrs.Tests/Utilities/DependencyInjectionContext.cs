@@ -1,7 +1,7 @@
-﻿using QuokkaDev.Cqrs.Abstractions;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
+using QuokkaDev.Cqrs.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Threading;
