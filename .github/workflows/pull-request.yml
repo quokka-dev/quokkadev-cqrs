@@ -35,7 +35,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
-      # Insert SonarQube analisys here...
+      # Insert SonarQube analisys here..
  
       - name: Install dependencies
         run: dotnet restore
