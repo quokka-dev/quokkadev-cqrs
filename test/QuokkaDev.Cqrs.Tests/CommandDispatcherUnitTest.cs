@@ -1,6 +1,6 @@
-﻿using QuokkaDev.Cqrs.Abstractions;
+﻿using Moq;
+using QuokkaDev.Cqrs.Abstractions;
 using QuokkaDev.Cqrs.Tests.Utilities;
-using Moq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
