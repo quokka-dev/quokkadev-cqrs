@@ -19,27 +19,26 @@ namespace QuokkaDev.Cqrs
         /// <returns>The service collection, so you can chain multiple methods</returns>
         public static IServiceCollection AddCQRS(this IServiceCollection services, params Assembly[] assemblies)
         {
-            if(assemblies is null || assemblies.Length == 0) {
+            if(assemblies.Length == 0)
+            {
                 assemblies = new Assembly[] { Assembly.GetCallingAssembly() };
             }
 
             services.AddScoped<IQueryDispatcher, QueryDispatcher>();
             services.AddScoped<ICommandDispatcher, CommandDispatcher>();
 
-            services.Scan(selector => {
+            services.Scan(selector =>
+            {
                 selector.FromAssemblies(assemblies)
-                        .AddClasses(filter => {
-                            filter.AssignableTo(typeof(IQueryHandler<,>));
-                        })
+                        .AddClasses(filter => filter.AssignableTo(typeof(IQueryHandler<,>)))
                         .AsImplementedInterfaces()
                         .WithScopedLifetime();
             });
 
-            services.Scan(selector => {
+            services.Scan(selector =>
+            {
                 selector.FromAssemblies(assemblies)
-                        .AddClasses(filter => {
-                            filter.AssignableTo(typeof(ICommandHandler<,>));
-                        })
+                        .AddClasses(filter => filter.AssignableTo(typeof(ICommandHandler<,>)))
                         .AsImplementedInterfaces()
                         .WithScopedLifetime();
             });

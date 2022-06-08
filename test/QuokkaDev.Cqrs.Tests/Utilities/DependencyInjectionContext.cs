@@ -4,6 +4,7 @@ using Moq;
 using QuokkaDev.Cqrs.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Threading;
 
 namespace QuokkaDev.Cqrs.Tests.Utilities
@@ -20,7 +21,21 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
         public DependencyInjectionContext()
         {
             services = new ServiceCollection();
-            services.AddCQRS(typeof(QueryDispatcherUnitTest).Assembly);
+            services.AddCQRS();
+            mocks = new List<Mock>();
+        }
+
+        public DependencyInjectionContext(Assembly assembly)
+        {
+            services = new ServiceCollection();
+            services.AddCQRS(assembly);
+            mocks = new List<Mock>();
+        }
+
+        public DependencyInjectionContext(Assembly[] assemblies)
+        {
+            services = new ServiceCollection();
+            services.AddCQRS(assemblies);
             mocks = new List<Mock>();
         }
 
@@ -55,10 +70,12 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
         /// <exception cref="InvalidOperationException">Raised if the service provider is not initialized</exception>
         public T GetService<T>() where T : class
         {
-            if(serviceProvider != null) {
+            if(serviceProvider != null)
+            {
                 return serviceProvider.GetRequiredService<T>();
             }
-            else {
+            else
+            {
                 throw new InvalidOperationException("Service provider is not initialized. Ensure to call BuildServiceProvider()");
             }
         }
