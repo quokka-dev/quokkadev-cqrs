@@ -63,10 +63,12 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
         /// <exception cref="InvalidOperationException">Raised if the service provider is not initialized</exception>
         public T GetService<T>() where T : class
         {
-            if(serviceProvider != null) {
+            if(serviceProvider != null)
+            {
                 return serviceProvider.GetRequiredService<T>();
             }
-            else {
+            else
+            {
                 throw new InvalidOperationException("Service provider is not initialized. Ensure to call BuildServiceProvider()");
             }
         }
