@@ -1,4 +1,4 @@
-[![dotnet package](https://github.com/QuokkaDevit/QuokkaDev-cqrs/actions/workflows/build.yml/badge.svg)](https://github.com/QuokkaDevit/QuokkaDev-cqrs/actions/workflows/build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=quokka-dev_quokkadev-cqrs&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=quokka-dev_quokkadev-cqrs)
 
 # QuokkaDev.CQRS 
 A package for apply CQRS pattern in .NET projects and add cross cutting concerns
