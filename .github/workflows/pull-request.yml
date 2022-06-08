@@ -34,8 +34,17 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+      
+      - uses: actions/cache@v3
+        name: Cache NuGet
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       # SonarCloud configuration
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -69,7 +78,6 @@ jobs:
       - name: Run format      
         run: |
           dotnet format --include ${{ steps.files.outputs.all }} --verify-no-changes
-
       
       - name: Run tests
         run: dotnet test ./test/QuokkaDev.Cqrs.Tests/QuokkaDev.Cqrs.Tests.csproj --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover,cobertura DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.ExcludeByFile=**/QuokkaDev.Cqrs.Abstractions/**/*.cs
