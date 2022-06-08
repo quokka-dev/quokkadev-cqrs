@@ -32,6 +32,13 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
             mocks = new List<Mock>();
         }
 
+        public DependencyInjectionContext(Assembly[] assemblies)
+        {
+            services = new ServiceCollection();
+            services.AddCQRS(assemblies);
+            mocks = new List<Mock>();
+        }
+
         /// <summary>
         /// Register a Mock ILogger<typeparamref name="T"/>
         /// </summary>

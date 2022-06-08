@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using QuokkaDev.Cqrs.Abstractions;
 using QuokkaDev.Cqrs.Tests.Utilities;
+using System;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -18,7 +20,20 @@ namespace QuokkaDev.Cqrs.Tests
         {
             // Arrange 
             DependencyInjectionContext context = new DependencyInjectionContext(typeof(ServiceCollectionUnitTest).Assembly);
+            TestRegistration(context);
+        }
 
+        [Fact]
+        public void Registration_With_Empty_Array_Should_Register_Handlers_In_Current_Assembly()
+        {
+            // Arrange 
+            DependencyInjectionContext context = new DependencyInjectionContext(Array.Empty<Assembly>());
+            TestRegistration(context);
+        }
+
+        private void TestRegistration(DependencyInjectionContext context)
+        {
+            // Arrange  
             context.BuildServiceProvider();
 
             // Act
