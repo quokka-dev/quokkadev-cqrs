@@ -19,7 +19,7 @@ namespace QuokkaDev.Cqrs
         /// <returns>The service collection, so you can chain multiple methods</returns>
         public static IServiceCollection AddCQRS(this IServiceCollection services, params Assembly[] assemblies)
         {
-            if(assemblies is null || assemblies.Length == 0)
+            if(assemblies.Length == 0)
             {
                 assemblies = new Assembly[] { Assembly.GetCallingAssembly() };
             }
