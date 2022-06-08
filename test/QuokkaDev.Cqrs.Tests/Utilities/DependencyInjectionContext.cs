@@ -18,8 +18,11 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
         private readonly IList<Mock> mocks;
         private ServiceProvider? serviceProvider;
 
-        public DependencyInjectionContext() : this(typeof(DependencyInjectionContext).Assembly)
+        public DependencyInjectionContext()
         {
+            services = new ServiceCollection();
+            services.AddCQRS();
+            mocks = new List<Mock>();
         }
 
         public DependencyInjectionContext(Assembly assembly)
