@@ -31,7 +31,7 @@ namespace QuokkaDev.Cqrs.Tests
             TestRegistration(context);
         }
 
-        private void TestRegistration(DependencyInjectionContext context)
+        private static void TestRegistration(DependencyInjectionContext context)
         {
             // Arrange  
             context.BuildServiceProvider();
