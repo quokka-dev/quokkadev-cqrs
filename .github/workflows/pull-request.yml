@@ -53,9 +53,8 @@ jobs:
       
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'        
-        run: |
-          mkdir -p .sonar/scanner          
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner     
+        run: |                
+          dotnet tool install --global dotnet-sonarscanner     
  
       # end SonarCloud configuration
 
@@ -97,9 +96,9 @@ jobs:
           
       - name: Build and analyze
         run: |
-          dotnet-sonarscanner begin /k:"quokka-dev_quokkadev-cqrs" /o:"quokka-dev" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coverage/coverage.cobertura.xml"
+          dotnet sonarscanner begin /k:"quokka-dev_quokkadev-cqrs" /o:"quokka-dev" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coverage/coverage.cobertura.xml"
           dotnet build --configuration Release --no-restore
-          dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
       - name: Publish QuokkaDev.Cqrs Code Coverage Summary Report
         uses: LouisBrunner/checks-action@v1.2.0
