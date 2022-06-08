@@ -14,11 +14,10 @@ namespace QuokkaDev.Cqrs.Tests
         }
 
         [Fact]
-        public async Task Registration_With_Assembly_Should_Register_Handlers_In_Assembly()
+        public void Registration_With_Assembly_Should_Register_Handlers_In_Assembly()
         {
             // Arrange 
             DependencyInjectionContext context = new DependencyInjectionContext(typeof(ServiceCollectionUnitTest).Assembly);
-
 
             context.BuildServiceProvider();
 
