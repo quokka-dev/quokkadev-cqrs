@@ -4,6 +4,7 @@ using Moq;
 using QuokkaDev.Cqrs.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Threading;
 
 namespace QuokkaDev.Cqrs.Tests.Utilities
@@ -17,10 +18,14 @@ namespace QuokkaDev.Cqrs.Tests.Utilities
         private readonly IList<Mock> mocks;
         private ServiceProvider? serviceProvider;
 
-        public DependencyInjectionContext()
+        public DependencyInjectionContext() : this(typeof(DependencyInjectionContext).Assembly)
+        {
+        }
+
+        public DependencyInjectionContext(Assembly assembly)
         {
             services = new ServiceCollection();
-            services.AddCQRS(typeof(QueryDispatcherUnitTest).Assembly);
+            services.AddCQRS(assembly);
             mocks = new List<Mock>();
         }
 
