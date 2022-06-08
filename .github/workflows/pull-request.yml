@@ -71,7 +71,7 @@ jobs:
 
       
       - name: Run tests
-        run: dotnet test --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover,cobertura
+        run: dotnet test ./test/QuokkaDev.Cqrs.Tests/QuokkaDev.Cqrs.Tests.csproj --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover,cobertura DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.ExcludeByFile=**/QuokkaDev.Cqrs.Abstractions/**/*.cs
       
       - name: Generate Unit Test Report
         uses: zyborg/dotnet-tests-report@v1
@@ -96,7 +96,7 @@ jobs:
           
       - name: Build and analyze
         run: |
-          dotnet sonarscanner begin /k:"quokka-dev_quokkadev-cqrs" /o:"quokka-dev" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coverage/coverage.cobertura.xml"
+          dotnet sonarscanner begin /k:"quokka-dev_quokkadev-cqrs" /o:"quokka-dev" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coverage/coverage.opencover.xml"
           dotnet build --configuration Release --no-restore
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
