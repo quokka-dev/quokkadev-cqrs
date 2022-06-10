@@ -3,7 +3,7 @@
 # QuokkaDev.CQRS 
 A package for apply CQRS pattern in .NET projects and add cross cutting concerns
 
-QuokkaDev.CQRS is a wrap around [MediatR](https://github.com/jbogard/MediatR/wiki). According to [CQRS Design Pattern](https://martinfowler.com/bliki/CQRS.html) it allow a clear distinction between commands and query. It is inspired by this [article](https://cezarypiatek.github.io/post/why-i-dont-use-mediatr-for-cqrs)
+According to [CQRS Design Pattern](https://martinfowler.com/bliki/CQRS.html) it allow a clear distinction between commands and query. It is inspired by this [article](https://cezarypiatek.github.io/post/why-i-dont-use-mediatr-for-cqrs)
 
 ## Installing QuokkaDev.Cqrs
     
@@ -11,7 +11,7 @@ You should install the packages via the .NET Core command line interface:
 
     dotnet add package QuokkaDev.Cqrs    
 
-The commands, will download and install QuokkaDev.Cqrsand all required dependencies.
+The commands, will download and install QuokkaDev.Cqrs and all required dependencies.
 
 ## Register handlers in D.I. Container
 Call the extension method `IServiceCollection.AddCQRS()` passing an array of assemblies to scan for search command and query handlers. If no assembly are passed to the extension method the current executing assembly will be used
